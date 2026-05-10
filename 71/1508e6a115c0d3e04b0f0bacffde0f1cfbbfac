@@ -1,0 +1,27 @@
+.gitignore
+  s_412cccd5e3cadd::t_043b92e9b3ad64 9
+.github/workflows/pages.yml
+  s_412cccd5e3cadd::t_c623b586752e86 1-53
+next.config.ts
+  s_412cccd5e3cadd::t_26a680beec3046 3-4,6,8-11
+app/page.tsx
+  s_412cccd5e3cadd::t_58929fdcc6192c 12-13
+app/i18n.ts
+  s_412cccd5e3cadd::t_9593a107ab3ec6 533
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "711508e6a115c0d3e04b0f0bacffde0f1cfbbfac",
+  "prompts": {},
+  "sessions": {
+    "s_412cccd5e3cadd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2a577168-8748-4c15-82c4-5020ea4cb34b",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "xFlaviews <flaviusmironcatalin@gmail.com>"
+    }
+  }
+}
