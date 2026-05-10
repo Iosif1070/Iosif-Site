@@ -335,26 +335,32 @@ function Section({ id, children, className = "" }: { id: string; children: React
 }
 
 function About({ t }: { t: Dict }) {
+  const facts = [
+    { k: t.about.rows.name, v: "Placinta, Iosif" },
+    { k: t.about.rows.school, v: "Lycée la Retraite" },
+    { k: t.about.rows.option, v: t.about.rows.optionVal },
+    { k: t.about.rows.dob, v: DOB },
+  ];
   return (
     <Section id="about">
       <SectionHeader tag={t.about.tag} title={t.about.title} kicker={t.about.kicker} />
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-start">
-        <div className="md:col-span-4">
-          <div className="relative rounded-2xl border border-[var(--color-rule)] bg-[var(--color-ink-soft)] p-3">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+        <div className="md:col-span-5">
+          <div className="relative rounded-2xl border border-[var(--color-rule)] bg-[var(--color-ink-soft)] p-3 h-full">
             <Cropmark pos="tl" />
             <Cropmark pos="tr" />
             <Cropmark pos="bl" />
             <Cropmark pos="br" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+            <div className="relative aspect-square md:aspect-auto md:h-full overflow-hidden rounded-xl">
               <Image
                 src="/iosif.jpg"
                 alt="Iosif Placinta"
                 fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover object-[50%_25%]"
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover object-[50%_22%]"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-paper/85">
                 <span>Iosif · {DOB.replace(/ \/ /g, "/")}</span>
                 <span className="text-[var(--color-accent)]">● REC</span>
@@ -363,41 +369,48 @@ function About({ t }: { t: Dict }) {
           </div>
         </div>
 
-        <div className="md:col-span-5 space-y-5 text-base lg:text-lg leading-relaxed text-paper/80">
-          <p>
-            {t.about.p1a} <span className="text-paper">Iosif</span>
-            {t.about.p1b} <span className="text-paper">{t.about.p1c}</span> {t.about.p1d}
-          </p>
-          <p>{t.about.p2}</p>
-          <p>
-            {t.about.p3a} <span className="text-[var(--color-accent)]">{t.about.p3b}</span> {t.about.p3c}{" "}
-            <span className="text-[var(--color-accent)]">{t.about.p3d}</span> {t.about.p3e}
-          </p>
-          <a
-            href={CV_HREF}
-            download
-            className="mt-2 inline-flex items-center gap-2 rounded-full border border-[var(--color-accent)]/60 bg-[var(--color-accent)]/10 px-4 py-2 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-ink transition"
-          >
-            <DownloadIcon />
-            {t.hero.cta3}
-          </a>
-        </div>
-
-        <aside className="md:col-span-3">
-          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-ink-soft)] p-6">
-            <div className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-paper/50 mb-4">
-              {t.about.fiche}
-            </div>
-            <dl className="space-y-2.5 text-[13px]">
-              <Row k={t.about.rows.name} v="Placinta, Iosif" />
-              <Row k={t.about.rows.dob} v={DOB} />
-              <Row k={t.about.rows.phone} v={PHONE} />
-              <Row k={t.about.rows.email} v={EMAIL} mono />
-              <Row k={t.about.rows.school} v="Lycée la Retraite" />
-              <Row k={t.about.rows.option} v={t.about.rows.optionVal} />
-            </dl>
+        <div className="md:col-span-7 flex flex-col gap-7">
+          <div className="space-y-5 text-base lg:text-lg leading-relaxed text-paper/80">
+            <p>
+              {t.about.p1a} <span className="text-paper">Iosif</span>
+              {t.about.p1b} <span className="text-paper">{t.about.p1c}</span> {t.about.p1d}
+            </p>
+            <p>{t.about.p2}</p>
+            <p>
+              {t.about.p3a} <span className="text-[var(--color-accent)]">{t.about.p3b}</span> {t.about.p3c}{" "}
+              <span className="text-[var(--color-accent)]">{t.about.p3d}</span> {t.about.p3e}
+            </p>
           </div>
-        </aside>
+
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-[var(--color-rule)] pt-6">
+            {facts.map((f) => (
+              <div key={f.k} className="space-y-1">
+                <dt className="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.22em] text-paper/45">
+                  {f.k}
+                </dt>
+                <dd className="text-sm md:text-base text-paper/95">{f.v}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="flex flex-wrap gap-3 pt-1">
+            <a
+              href={CV_HREF}
+              download
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-5 py-2.5 text-sm font-medium text-ink hover:bg-paper transition"
+            >
+              <DownloadIcon />
+              {t.hero.cta3}
+            </a>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="inline-flex items-center gap-2 rounded-full border border-paper/20 px-5 py-2.5 text-sm font-medium hover:border-paper/60 transition"
+            >
+              {t.hero.cta1}
+              <Arrow />
+            </a>
+          </div>
+        </div>
       </div>
     </Section>
   );
