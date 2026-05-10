@@ -1,0 +1,20 @@
+app/page.tsx
+  s_412cccd5e3cadd::t_67e0ad847d292d 14
+  s_412cccd5e3cadd::t_93e4979dc78bd0 358
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "b097ecb7e4e7bf15b4d2421a6717536ac4acdb74",
+  "prompts": {},
+  "sessions": {
+    "s_412cccd5e3cadd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2a577168-8748-4c15-82c4-5020ea4cb34b",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "xFlaviews <flaviusmironcatalin@gmail.com>"
+    }
+  }
+}
