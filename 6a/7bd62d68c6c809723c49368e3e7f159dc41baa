@@ -1,0 +1,23 @@
+app/layout.tsx
+  s_412cccd5e3cadd::t_0e35b58438e5bc 1
+  s_412cccd5e3cadd::t_e2fae16e4fa7a0 19-26,28-30,32-35,38-51,56
+  s_412cccd5e3cadd::t_3a8e4aec008e6b 55
+app/icon.svg
+  s_412cccd5e3cadd::t_abea4d704957be 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "6a7bd62d68c6c809723c49368e3e7f159dc41baa",
+  "prompts": {},
+  "sessions": {
+    "s_412cccd5e3cadd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2a577168-8748-4c15-82c4-5020ea4cb34b",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "xFlaviews <flaviusmironcatalin@gmail.com>"
+    }
+  }
+}
