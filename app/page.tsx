@@ -11,6 +11,7 @@ const ADDRESS = "Rue du Busselenberg 91, 1070 Anderlecht";
 const DOB = "12 / 02 / 2009";
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const CV_HREF = `${BASE_PATH}/cv-iosif-placinta.pdf`;
+const PHOTO_SRC = `${BASE_PATH}/iosif.jpg`;
 const SHEET_NO = "A-001";
 const SCALE = "1:50";
 const REV = "Rev. A";
@@ -354,7 +355,7 @@ function About({ t }: { t: Dict }) {
             <Cropmark pos="br" />
             <div className="relative aspect-square md:aspect-auto md:h-full overflow-hidden rounded-xl">
               <Image
-                src="/iosif.jpg"
+                src={PHOTO_SRC}
                 alt="Iosif Placinta"
                 fill
                 sizes="(min-width: 768px) 40vw, 100vw"
