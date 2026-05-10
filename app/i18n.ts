@@ -530,6 +530,6 @@ export const dict = {
       address: "Address",
     },
   },
-} as const;
+};
 
 export type Dict = (typeof dict)["fr"];
